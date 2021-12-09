@@ -54,3 +54,17 @@ for (let i = 0; i < team.length; i++) {
   const div = createCard(team[i].name,team[i].role,team[i].image);
   cardContainer.innerHTML += div;
 }
+
+const formButton = document.getElementById('addMemberButton');
+formButton.addEventListener('click', function () {
+  const nameValue = document.getElementById('name').value;
+  const roleValue = document.getElementById('role').value;
+  const imageValue = document.getElementById('image').value;
+
+  if (nameValue != '' && roleValue != '' && imageValue != '') {
+    const div = createCard(nameValue, roleValue, imageValue);
+    cardContainer.innerHTML += div;
+  } else {
+    console.log('Dati errati o mancanti');
+  }
+});
