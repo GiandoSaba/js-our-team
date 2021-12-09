@@ -30,3 +30,27 @@ const team = [
     image: 'barbara-ramos-graphic-designer.jpg',
   },
 ];
+
+function createCard(name, role, image) {
+  let div = 
+  `<div class="team-card">
+      <div class="card-image">
+      <img
+        src="img/${image}"
+        alt="${name}"
+      />
+      </div>
+      <div class="card-text">
+        <h3>${name}</h3>
+        <p>${role}</p>
+      </div>
+    </div>`
+
+    return div;
+}
+
+const cardContainer = document.querySelector('.team-container');
+for (let i = 0; i < team.length; i++) {
+  const div = createCard(team[i].name,team[i].role,team[i].image);
+  cardContainer.innerHTML += div;
+}
