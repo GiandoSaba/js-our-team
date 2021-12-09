@@ -62,6 +62,12 @@ formButton.addEventListener('click', function () {
   const imageValue = document.getElementById('image').value;
 
   if (nameValue != '' && roleValue != '' && imageValue != '') {
+    const obj = {
+      name: nameValue,
+      role: roleValue,
+      image: imageValue
+    };
+    team.push(obj);
     const div = createCard(nameValue, roleValue, imageValue);
     cardContainer.innerHTML += div;
   } else {
